@@ -1,0 +1,46 @@
+{
+  "phase": "feasibility-only",
+  "base_commit": "115e1a1cbecf946c0b6f8970a10dc5f90ff6a6b2",
+  "verification_date": "2026-11-16",
+  "diagnostic_parser_tests": {
+    "kind": "synthetic offline inputs, no live quotes",
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "google_finance": {
+    "measured_at_utc": "2026-11-16T11:11:36.402151+00:00",
+    "execution_environment": "existing Linux backend, in-memory Python stdin execution",
+    "requests_use_cookies_or_login": false,
+    "identified_user_agent_result": "redirected to finance/unsupported, not counted as success",
+    "desktop_user_agent_result": "expected currency pages and main quotes extracted",
+    "results": [
+      {"pair": "USD-CNY", "http_status": 200, "expected_destination": true, "extraction_success": true, "quote_time_present": true, "compressed_response_bytes": 189197},
+      {"pair": "EUR-CNY", "http_status": 200, "expected_destination": true, "extraction_success": true, "quote_time_present": true, "compressed_response_bytes": 203113},
+      {"pair": "JPY-CNY", "http_status": 200, "expected_destination": true, "extraction_success": true, "quote_time_present": true, "compressed_response_bytes": 209531}
+    ],
+    "planned_schedule": "daily 00:00 UTC",
+    "scheduler_installed": false,
+    "production_cache_installed": false,
+    "long_term_stability_verified": false,
+    "data_reuse_permission_confirmed": false,
+    "live_quotes_or_html_stored_in_repository": false
+  },
+  "return_route": {
+    "transit_release": "v1.4.5",
+    "transit_commit": "ee9f31c5ff104e033ded858171ce0b63c672e878",
+    "transit_license": "MIT",
+    "backtrace_license_checked": "Apache-2.0",
+    "inherited_enhanced_companion_version": "0.3.0",
+    "inherited_manifest_komari_target": "1.6.0",
+    "node_protocol_test_total": 16,
+    "node_protocol_test_passed": 15,
+    "node_protocol_test_failed": 1,
+    "failure_boundary": "Windows does not satisfy the test's POSIX 0600 mode assertion",
+    "python_helper_test_status": "not runnable on Windows because fcntl is unavailable",
+    "linux_helper_suite_run": false,
+    "live_return_route_probe_run": false,
+    "production_installation_performed": false,
+    "new_third_party_code_imported": false
+  }
+}
