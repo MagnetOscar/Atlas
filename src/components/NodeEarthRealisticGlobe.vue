@@ -278,7 +278,7 @@ async function startGlobe() {
       .arcEndLat('endLat')
       .arcEndLng('endLng')
       .arcColor(() => appStore.isDark ? 'rgba(56, 189, 248, 0.82)' : 'rgba(2, 132, 199, 0.72)')
-      .arcAltitudeAutoScale(0.22)
+      .arcAltitudeAutoScale(0.42)
       .arcStroke(0.45)
       .arcDashLength(persistentEarthArcs.value ? 1 : 0.06)
       .arcDashGap(persistentEarthArcs.value ? 0 : 0.03)
@@ -290,7 +290,12 @@ async function startGlobe() {
       .htmlAltitude(0.012)
       .htmlElement(createLabelElement)
       .htmlElementVisibilityModifier((el: HTMLElement, isVisible: boolean) => {
+        const wasVisible = el.dataset.globeVisible === '1'
         el.dataset.globeVisible = isVisible ? '1' : '0'
+        if (isVisible)
+          delete el.dataset.globeHideUntil
+        else if (wasVisible)
+          el.dataset.globeHideUntil = String(performance.now() + 450)
         el.style.opacity = isVisible ? '1' : '0'
         el.style.filter = isVisible ? 'blur(0)' : 'blur(14px)'
       })
@@ -315,12 +320,14 @@ async function startGlobe() {
       const scaleY = drawSize.y / clientH
       sharedFlagUniforms.uFlagRadius.value = 3.5 * scaleX
 
+      const now = performance.now()
       let flagCount = 0
       currentScene.traverse((node) => {
         const sceneObj = node as unknown as GlobeSceneObject & { getWorldPosition?: (target: typeof projVec) => typeof projVec }
         if (sceneObj.__globeObjType === 'html') {
           const el = sceneObj.element
-          if (!el || el.dataset.globeVisible !== '1' || flagCount >= MAX_FLAG_BOXES || !sceneObj.getWorldPosition)
+          const hideUntil = Number(el?.dataset.globeHideUntil || '0')
+          if (!el || (el.dataset.globeVisible !== '1' && now > hideUntil) || flagCount >= MAX_FLAG_BOXES || !sceneObj.getWorldPosition)
             return
           sceneObj.getWorldPosition(projVec).project(camera)
           if (projVec.z < -1 || projVec.z > 1)

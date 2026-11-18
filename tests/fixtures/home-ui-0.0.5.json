@@ -5,6 +5,7 @@
     "src/components/Footer.vue": "91f5e9c52074be910dd3b0bf54e83b4410f7619f1e02ca297977c813544e4cb1",
     "src/components/Header.vue": "834109e923eb8ab2c51317ad378f6c5a0aed96d0f62451473384b4ca002ee877",
     "src/components/NodeCard.vue": "3b574de8cd03f6f789523757add75f78b882d7009614dccf22b1472a576a0146",
+    "src/components/NodeEarthCobeGlobe.vue": "39e3e9311c09164532004ab4425ed98dd6b7dcc347bf1f3f3906c8261bf39fdc",
     "src/components/NodeEarthRealisticGlobe.vue": "3af76a348021ee5773fdd72040fa94d9ee6b67dcd277d641785ceff1e584e2ec",
     "src/components/NodeEarthTiledMap.vue": "8c89a28c4f4c5d80109198765d7f3e76030292313cf60e592656451fed4619aa",
     "src/components/NodeHeaderTags.vue": "bafa97f23372c0961f2f89b7112904490d893cd0ff73c24eec36a2f12e96cfde",
@@ -12,7 +13,8 @@
     "src/views/HomeView.vue": "58c99d064fedc3efca360bf2bfc066796a161eb2dc6ffd47487f6cdb60f9ae57"
   },
   "protectedFiles": {
-    "src/components/NodeEarthRealisticGlobe.vue": "4a143911caedca1d87b2dfde807b5181de8cd2a60e1abb62e3ab6769515dcf16",
+    "src/components/NodeEarthCobeGlobe.vue": "63d1041779e4f090a189c0be8a0151eaa3a1d0abd3374cbb9746aa469d26bfd5",
+    "src/components/NodeEarthRealisticGlobe.vue": "76a34e8c8e05eb703431b4f3a0a65c4073642d14755dc7e1f73aa8c23ed114b7",
     "src/components/NodeEarthTiledMap.vue": "0e91e445da0766db52726a14cf057bc9f9857bd3bc076b4bd645e9b0fdf0163b"
   }
 }

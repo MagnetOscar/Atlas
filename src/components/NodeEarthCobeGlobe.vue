@@ -225,7 +225,7 @@ function buildInitialOptions(): COBEOptions {
     arcs: arcs.value,
     arcColor: colors.arcColor,
     arcWidth: 0.8,
-    arcHeight: 0.4,
+    arcHeight: 0.22,
     markerElevation: 0,
 
   }
