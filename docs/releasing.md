@@ -30,7 +30,7 @@
 - 2026-11-19 用户明确授权整理六个主题 Release：保留原主题 ZIP，校验信息移入说明，JSON／TXT 移出附件展示，组件在替代链接可用后迁移。此项不发布新软件版本。
 - 历史下载／SHA256 见 [downloads.md](downloads.md)，代码和包记录见 [verification/releases.json](verification/releases.json)。
 
-现有自动发布工作流仍先生成校验附件；本次没有修改工作流权限或触发方式。发布完成后运行 `node scripts/tidy-theme-release.mjs atlas-v<version>` 只读查看计划，再加 `--apply` 将摘要保留在说明并移除识别出的构建元数据。该命令核对实际 ZIP 摘要，不重建包、不处理未知附件或组件。CI 中的构建验证资料继续保留。
+自动发布工作流直接只上传主题 ZIP，并把 SHA256、源码与构建验证链接写进 Release 说明；插件链接到独立组件页，不再需要发布后清理。JSON 和校验文件仅留在 CI 验证产物中，实际下载 ZIP 后继续核对 SHA256。`scripts/tidy-theme-release.mjs` 仅保留为历史附件整理工具，正常发版无需运行。既有检查、权限与手动触发方式不变。
 
 ## 正式发版与验收
 

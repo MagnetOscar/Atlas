@@ -4,7 +4,7 @@ Read [docs/development.md](docs/development.md), [docs/releasing.md](docs/releas
 
 ## Scope and compatibility
 
-- Current task (2026-11-19): brand/documentation cleanup and existing Release download organization only. No runtime, dependency, saved-setting, manifest-version or production changes; no new software version or theme ZIP rebuild.
+- Current task (2026-11-19): adjust the automatic release workflow to upload only the theme ZIP, place SHA256/source/verification links in the description and link optional components separately. No runtime, dependency, saved-setting, manifest-version or production changes; do not trigger a release or rebuild a theme ZIP for this task.
 - Use Atlas for current project names. Retain copyrights/notices, vendored bytes, upstream links/history and fork baseline 0332d5f7c73f7994ba21c01e4b739d04835120b1.
 - Preserve legacy Enhanced configuration, plugin IDs/paths, dependency names and per-node authentication; do not blindly rename compatibility identifiers or third-party source.
 - Preserve accepted UI and data semantics. Further UI changes require explicit authorization and an additive contract under [the UI SOP](docs/ui-contract-sop.md).
