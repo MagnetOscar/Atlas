@@ -1,0 +1,44 @@
+{
+  "version": "0.0.10",
+  "status": "passed",
+  "source_commit": "bdf6cadd620102c345922bea37a17292ca722099",
+  "accepted_runtime_commit": "8ba4e1521971d3561c1adc8083baa1ef5e4ebf76",
+  "merged_PR28_commit": "752326f72b698c85c30a8f386734fca6181316b4",
+  "reviewedPR": "https://github.com/MagnetOscar/Atlas/pull/28",
+  "scope": "Release metadata only; formally package the already accepted PR28 traffic fixes",
+  "runtimeGitObjectsUnchanged": {
+    "src": "3b9a427eb54ab99653c36cb465f17468c0eb4f73",
+    "public": "e1490b4e18a1e0e914cab119a0f6fbb8aa7e260d",
+    "companion": "3c7b69c60c2c1de6739b2904131f11fd91724946",
+    "package.json": "abf385087239923def4030e7a02f0eed73830854",
+    "bun.lock": "b8f3c19a97031c757687b714e1559b6567723d78",
+    "vite.config.ts": "b23f63429e4a80d5ecba0e8fd64a024c3954f903"
+  },
+  "manifestOnlyVersionChanged": true,
+  "validationReuse": {
+    "quality": "https://github.com/MagnetOscar/Atlas/actions/runs/44689275600",
+    "visual": "https://github.com/MagnetOscar/Atlas/actions/runs/44689275595",
+    "LinuxUnitPassed": 444,
+    "LinuxBrowserPassed": 266,
+    "priorNativeChecksPassed": 6,
+    "priorLiveRenderedNodes": 11,
+    "additionalTestsRun": false,
+    "note": "Existing acceptance is reused only because runtime, UI, dependencies and bundling configuration are byte-identical. No new functional, browser or production tests were run for this version metadata update."
+  },
+  "releaseExecution": {
+    "branch": "release/atlas-v0.0.10",
+    "mainBranchProtectionUnchanged": true,
+    "workflowsUnchanged": true,
+    "fullTestWorkflowNotRetriggered": true,
+    "CADeployment": false,
+    "backupsCreated": false
+  },
+  "backendRequirement": {
+    "automaticModificationByZIP": false,
+    "trafficMetricRetentionDays": 36,
+    "rollupMinuteRetentionMinutes": 48000,
+    "rollupFiveMinuteRetentionMinutes": 49000,
+    "rollupHourRetentionHours": 840,
+    "missingHistoryRecovered": false
+  }
+}

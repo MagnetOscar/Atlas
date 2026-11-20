@@ -1,0 +1,42 @@
+{
+  "version": "0.0.10",
+  "status": "passed",
+  "source_commit": "bdf6cadd620102c345922bea37a17292ca722099",
+  "baseline_commit": "752326f72b698c85c30a8f386734fca6181316b4",
+  "scope": "traffic-pr28-metadata-only-release",
+  "branding": {
+    "name": "Atlas"
+  },
+  "checks": {
+    "reset": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    },
+    "finance": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    },
+    "sorting": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    },
+    "display": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    },
+    "return-route": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    },
+    "integration": {
+      "status": "passed",
+      "evidence": "docs/verification/review-0.0.10.json",
+      "basis": "Reused accepted PR28; runtime unchanged"
+    }
+  }
+}
