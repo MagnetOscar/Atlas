@@ -2,6 +2,10 @@
 
 普通安装只下载原生主题 ZIP，在 Komari 1.6.1 后台主题管理上传并启用 Atlas。GitHub 自动 Source code 不是安装包；插件在[独立组件页](components.md)。
 
+## Atlas v0.0.10
+
+[下载主题 ZIP 与查看 SHA256](https://github.com/MagnetOscar/Atlas/releases/tag/atlas-v0.0.10)。正式收录 PR28 流量统计修复，UI 不变；后端保留要求见发行说明，插件单独提供。
+
 ## Atlas v0.0.9
 
 [下载主题 ZIP 与查看 SHA256](https://github.com/MagnetOscar/Atlas/releases/tag/atlas-v0.0.9)。本版修复回程详情展开时摘要行距缩紧，保留 0.0.8 功能；插件单独下载。

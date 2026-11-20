@@ -6,7 +6,7 @@
 
 ## 当前组件 0.4.0
 
-适用于 Atlas 0.0.4–0.0.9、Komari Server 1.6.1。plugin ZIP 上传至插件管理，TcpQuality tar.gz 作为 Komari Agent 附件；按[适配说明](tcpquality-adaptation.md)及[附件 README](../companion/tcpquality/README.md)配置。
+适用于 Atlas 0.0.4–0.0.10、Komari Server 1.6.1。plugin ZIP 上传至插件管理，TcpQuality tar.gz 作为 Komari Agent 附件；按[适配说明](tcpquality-adaptation.md)及[附件 README](../companion/tcpquality/README.md)配置。
 
 节点需 Linux、Python >=3.12 和工具权限。复用既有调度与鉴权，无新增常驻服务。rootfs 由准备阶段按固定摘要获取；仅安装主题不会安装组件，IPv6 不通时如实标记不可用。
 
