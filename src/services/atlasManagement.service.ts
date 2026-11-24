@@ -104,7 +104,7 @@ export async function saveAtlasManagement(expected: AtlasManagementState, draft:
       const before = await fetchState(signal)
       if (managementFingerprint(before) !== managementFingerprint(expected))
         throw new Error('配置已被其他操作修改，请刷新后再确认；本次未写入')
-      if (before.public.theme !== THEME_SHORT || !['1.6.0', '1.6.1'].includes(before.komariVersion) || !before.plugin?.running || !before.config || !before.policy || !before.health || before.health.storage !== 'healthy')
+      if (before.public.theme !== THEME_SHORT || !['1.6.0', '1.6.1', '1.6.2'].includes(before.komariVersion) || !before.plugin?.running || !before.config || !before.policy || !before.health || before.health.storage !== 'healthy')
         throw new Error('需要正在运行的兼容插件及当前 Atlas 主题；未写入')
       const next = managementChanges(before.public.theme_settings, before.config, draft)
       try {
@@ -136,7 +136,7 @@ export async function enableAtlasPlugin(): Promise<AtlasManagementState> {
   await authorize()
   await requestManager.run('atlas:management:enable', async (signal) => {
     const state = await fetchState(signal)
-    if (!state.plugin || !['1.6.0', '1.6.1'].includes(state.komariVersion) || state.public.theme !== THEME_SHORT)
+    if (!state.plugin || !['1.6.0', '1.6.1', '1.6.2'].includes(state.komariVersion) || state.public.theme !== THEME_SHORT)
       throw new Error('请先用统一 CLI 安装兼容的 Atlas 主题与插件')
     await getSharedRpc().getClient().call('admin:setPluginEnabled', { short: PROBE_SHORT, enabled: true, approved: true }, signal)
   }, { retryAttempts: 0 })

@@ -2,6 +2,9 @@ import type { NodePingHistoryPoint, NodePingStatsState, NodePingTaskStatsState }
 
 export type ChinaCarrierKey = 'unicom' | 'telecom' | 'mobile'
 
+// v6 任务名标记：三网聚合只算 v4 任务时用。
+const IPV6_TASK_NAME_PATTERN = /v6/i
+
 export interface ChinaCarrierDefinition {
   key: ChinaCarrierKey
   labelZh: string
@@ -89,7 +92,10 @@ function aggregateTaskStats(tasks: NodePingTaskStatsState[]): { stats: NodePingS
 
 export function aggregateChinaCarrierPingStats(taskStats: NodePingTaskStatsState[]): NodeCarrierPingStatsState[] {
   return CHINA_CARRIER_DEFINITIONS.map((definition) => {
-    const matchingTasks = taskStats.filter(task => matchChinaCarrier(task.name) === definition.key)
+    // 三网聚合只算 v4 任务：v6 任务在无 IPv6 的节点上 100% 失败，
+    // 混进来会把丢包平均拉到 ~50%，与节点真实线路无关。
+    // v6 任务仍在详情页逐任务显示，不丢数据。
+    const matchingTasks = taskStats.filter(task => matchChinaCarrier(task.name) === definition.key && !IPV6_TASK_NAME_PATTERN.test(task.name))
     const aggregated = aggregateTaskStats(matchingTasks)
     return {
       key: definition.key,
